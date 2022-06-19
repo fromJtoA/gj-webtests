@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.9.6"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.1")
+    testImplementation 'io.cucumber:cucumber-junit:5.6.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'
+    testImplementation("org.junit.platform:junit-platform-launcher:1.0.0-M3")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task smoke(type: Test) {
+    useJUnitPlatform {
+        includeTags 'smoke'
+    }
+}
+task desktop(type: Test) {
+    useJUnitPlatform {
+        includeTags 'desktop'
+    }
+}
+
+task mobile(type: Test) {
+    useJUnitPlatform {
+        includeTags 'mobile'
+    }
+}
+
+task authorization(type: Test) {
+    useJUnitPlatform {
+        includeTags 'authorization'
+    }
+}
+
+task cart(type: Test) {
+    useJUnitPlatform {
+        includeTags 'cart'
+    }
+}
+
+task homePage(type: Test) {
+    useJUnitPlatform {
+        includeTags 'homePage'
+    }
+}
