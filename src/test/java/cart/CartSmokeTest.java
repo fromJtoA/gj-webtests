@@ -65,5 +65,6 @@ public class CartSmokeTest extends BaseCartTest {
         closeBannerAndGoToCard();
         pause();
         checkCartAfterOrder();
+        checkAuthorization();
     }
 }

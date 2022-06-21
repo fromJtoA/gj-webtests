@@ -51,9 +51,4 @@ public abstract class BaseAuthorizationTest extends BaseTest {
         waitAndClick(By.cssSelector(".header-body__account-button"));
         authorizationBase();
     }
-
-    @Step("Проверка авторизации : на кнопке \"Профиль\" написано имя пользовотеля")
-    protected void checkAuthorization() {
-        Assertions.assertDoesNotThrow(() -> wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(NAME))));
-    }
 }

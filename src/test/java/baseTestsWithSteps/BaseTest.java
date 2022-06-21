@@ -2,6 +2,7 @@ package baseTestsWithSteps;
 
 import com.google.common.io.Resources;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -257,5 +258,8 @@ public abstract class BaseTest {
         moveToClickRandomElement(By.cssSelector(".listing-item__container.js-product-ref-link"));
     }
 
-
+    @Step("Проверка авторизации : на кнопке \"Профиль\" написано имя пользовотеля")
+    protected void checkAuthorization() {
+        Assertions.assertDoesNotThrow(() -> wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(NAME))));
+    }
 }

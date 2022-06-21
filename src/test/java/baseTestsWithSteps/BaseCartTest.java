@@ -169,8 +169,8 @@ public abstract class BaseCartTest extends BaseTest {
         inputEmailConfirmation();
         chooseDeliveryConfirmation();
         inputAddressConfirmation();
-        inputNameConfirmation();
         inputSurnameConfirmation();
+        inputNameConfirmation();
         inputPhoneConfirmation();
         choosePaymentMethodConfirmation();
         clickBtnFromConfirmationToCheckout();
