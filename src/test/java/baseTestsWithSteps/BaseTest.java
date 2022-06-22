@@ -175,7 +175,7 @@ public abstract class BaseTest {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
     }
 
-    @Step("Проверка видимости элемента с {1}")
+    @Step("Проверка видимости элемента с {0}")
     public boolean isDisplay(By by) {
         try {
             return driver.findElement(by).isDisplayed();
